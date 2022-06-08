@@ -105,34 +105,6 @@ class Banker:
             self.maximum[customer_index][idx] = val
             self.need[customer_index][idx] = val
 
-    def print_state(self):
-        """
-        Prints the current state of the bank.
-        """
-        # Print available
-        print("\nCurrent state:")
-        print("Available:")
-        print(self.available)
-        print()
-
-        # Print maximum
-        print("Maximum:")
-        for i in self.maximum:
-            print(i)
-        print()
-
-        # Print allocation
-        print("Allocation:")
-        for i in self.allocation:
-            print(i)
-        print()
-
-        # Print need
-        print("Need:")
-        for i in self.need:
-            print(i)
-        print()
-
     def request_resources(self, customer_index, request):
         """
         Request resources for a customer loan.
@@ -249,6 +221,34 @@ class Banker:
 
         bank_lock.release()
         return safe
+
+    def print_state(self):
+        """
+        Prints the current state of the bank.
+        """
+        # Print available
+        print("\nCurrent state:")
+        print("Available:")
+        print(self.available)
+        print()
+
+        # Print maximum
+        print("Maximum:")
+        for i in self.maximum:
+            print(i)
+        print()
+
+        # Print allocation
+        print("Allocation:")
+        for i in self.allocation:
+            print(i)
+        print()
+
+        # Print need
+        print("Need:")
+        for i in self.need:
+            print(i)
+        print()
 
     @staticmethod
     def run_file(filename):
