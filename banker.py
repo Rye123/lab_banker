@@ -312,8 +312,9 @@ class Banker:
             print(f"Error opening {filename}.")
             return
 
-        except Exception:
+        except Exception as e:
             print(f"Error parsing resources on line {line_number}.")
+            print(e)
             return
 
 
