@@ -2,7 +2,7 @@ import sys
 import threading
 from copy import deepcopy
 
-# Creating lock for threads
+# Creating a reentrant lock for threads
 bank_lock = threading.RLock()
 
 
