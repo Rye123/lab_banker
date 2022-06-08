@@ -183,13 +183,13 @@ class Banker:
             self.available[idx] += val
         bank_lock.release()
 
-    def check_safe(self, customer_index, request, available, need, allocation):
+    def check_safe(self, customer_index, request, work, need, allocation):
         """
         Checks if the request will leave the bank in a safe state.
 
         Parameters
         ----------
-        available, need, allocation : list[list[int]]
+        work, need, allocation : list[int], list[list[int]], list[list[int]]
             deep copy of available, need, and allocation matrices
         customer_index : int
             the customer's index (0-indexed)
