@@ -160,7 +160,7 @@ class Banker:
 
     def release_resources(self, customer_index, release):
         """
-        Releases resources borrowed by a customer. Assume release is valid for simplicity.
+        Releases resources borrowed by a customer. Assume the value of release is valid (will not release more than what's been allocated) for simplicity.
 
         Parameters
         ----------
@@ -207,8 +207,8 @@ class Banker:
         # TODO: Check if the state is safe
         # 1. Create work list[int] of length self.M, set work = available
         # 2. Create finish list[int] of length self.N
-        # 3. Find index i such that both finish[i] == False, Need[i] <= Work
-        # 4. If such index in (3) exists, update work += Allocation[i], finish[i] = True
+        # 3. Find index i such that both finish[i] == False, need[i] <= work
+        # 4. If such index in (3) exists, update work += allocation[i], finish[i] = True
         # 5. REPEAT step (3) until no such i exists
         # 6. If no such i exists anymore, and finish[i] == True for all i, set safe = True
         # 7. Otherwise, set safe = False
