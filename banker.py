@@ -18,7 +18,7 @@ class Banker:
         the number of resources
     available : list[int] (1 by M)
         the available amount of each resource
-    maximum : list[list[int]] (N by M)
+    max : list[list[int]] (N by M)
         the maximum demand of each customer
     allocation : list[list[int]] (N by M)
         the amount currently allocated
@@ -72,7 +72,7 @@ class Banker:
         self.available = available_resources
 
         # Set the array size for maximum, allocation, and need
-        self.maximum = [
+        self.max = [
             [0 for _ in range(self.number_of_resources)]
             for _ in range(self.number_of_customers)
         ]
@@ -102,7 +102,7 @@ class Banker:
         """
         # Add customer, update maximum and need
         for idx, val in enumerate(maximum_demand):
-            self.maximum[customer_index][idx] = val
+            self.max[customer_index][idx] = val
             self.need[customer_index][idx] = val
 
     def request_resources(self, customer_index, request):
@@ -234,7 +234,7 @@ class Banker:
 
         # Print maximum
         print("Maximum:")
-        for i in self.maximum:
+        for i in self.max:
             print(i)
         print()
 
