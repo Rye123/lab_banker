@@ -24,5 +24,5 @@ if __name__ == "__main__":
             os.system("rm answer.txt result.txt")
         except:
             print(
-                "Command failed to run. Please run this file in POSIX-compliant OS."
+                "Command failed to run. Please run this file in POSIX-compliant OS. Please also check that Python3.10 is run with command python3. Otherwise, change line 12 in banker_tester.py accordingly."
             )
