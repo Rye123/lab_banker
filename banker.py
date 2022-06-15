@@ -1,6 +1,7 @@
 import sys
 import threading
 from copy import deepcopy
+import traceback
 
 # Creating a reentrant lock for threads
 bank_lock = threading.RLock()
@@ -318,6 +319,7 @@ class Banker:
         except Exception as e:
             print(f"Error parsing resources on line {line_number}.")
             print(e)
+            traceback.print_exc()
             return
 
 
