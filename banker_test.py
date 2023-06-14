@@ -20,7 +20,7 @@ if __name__ == "__main__":
         print(f"\n---TEST {i}---")
         question_file = f"test_files/q{i}.txt"
         expected_answer_file = Path(f"test_files/q{i}_answer.txt")
-        command = f"{PY_EXEC} {banker_file} {question_file} > {ANSWER_FILE}"
+        command = f"\"{PY_EXEC}\" {banker_file} {question_file} > {ANSWER_FILE}"
         os.system(command)
 
         with ANSWER_FILE.open('r') as ans_fp:
