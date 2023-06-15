@@ -5,7 +5,8 @@ from pathlib import Path
 
 PY_EXEC = sys.executable
 PY_VERSION = sys.version_info
-ANSWER_FILE = Path("./answer.txt")
+CUR_DIR = Path(__file__).parent
+ANSWER_FILE = CUR_DIR.joinpath("answer.txt")
 
 if __name__ == "__main__":
     if PY_VERSION.major < 3 or PY_VERSION.minor < 10:
@@ -14,12 +15,12 @@ if __name__ == "__main__":
     if not ANSWER_FILE.exists():
         ANSWER_FILE.touch()
     no_test_files = 6
-    banker_file = "banker.py"
+    banker_file = CUR_DIR.joinpath("banker.py")
 
     for i in range(no_test_files):
         print(f"\n---TEST {i}---")
-        question_file = f"test_files/q{i}.txt"
-        expected_answer_file = Path(f"test_files/q{i}_answer.txt")
+        question_file = CUR_DIR.joinpath("test_files", f"q{i}.txt")
+        expected_answer_file = CUR_DIR.joinpath("test_files", f"q{i}_answer.txt")
         command = f"\"{PY_EXEC}\" {banker_file} {question_file} > {ANSWER_FILE}"
         os.system(command)
 
